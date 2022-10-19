@@ -4,8 +4,9 @@ import Home from '../screens/Home';
 import { Session } from '@supabase/supabase-js';
 import { supabase } from '../lib/supabase';
 import Auth from '../screens/Auth';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const { Navigator, Screen } = createBottomTabNavigator();
+const { Navigator, Screen } = createNativeStackNavigator();
 
 const TabNavigator = () => {
   const [session, setSession] = useState<Session | null>(null);
@@ -21,8 +22,11 @@ const TabNavigator = () => {
   }, []);
   return (
     <Navigator>
-      <Screen options={{ headerShown: false }} name="Auth" component={Auth} />
-      <Screen options={{ headerShown: false }} name="Home" component={Home} />
+      {session && session.user ? (
+        <Screen options={{ headerShown: false }} name="Home" component={Home} />
+      ) : (
+        <Screen options={{ headerShown: false }} name="Auth" component={Auth} />
+      )}
     </Navigator>
   );
 };

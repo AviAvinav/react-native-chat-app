@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { supabase } from '../lib/supabase';
 
-const Auth = ({ navigation }) => {
+const Auth = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -20,7 +20,6 @@ const Auth = ({ navigation }) => {
     if (error) Alert.alert(error.message);
     setLoading(false);
     setIsLoggendIn(true);
-    navigation.navigate('Home');
   }
 
   async function signUpWithEmail() {
@@ -33,7 +32,6 @@ const Auth = ({ navigation }) => {
     if (error) Alert.alert(error.message);
     setLoading(false);
     setIsLoggendIn(true);
-    navigation.navigate('Home');
   }
   return (
     <SafeAreaView>
