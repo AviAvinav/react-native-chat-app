@@ -1,11 +1,16 @@
-import { useFonts, Inter_400Regular } from '@expo-google-fonts/inter';
-import Home from './screens/Home';
+import { useEffect, useState } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+
+import TabNavigator from './components/TabNavigator';
+
+import { Session } from '@supabase/supabase-js';
+import { supabase } from './lib/supabase';
+import Auth from './screens/Auth';
 
 export default function App() {
-  const [fontsLoaded] = useFonts({
-    Inter_400Regular,
-  });
-
-  if (!fontsLoaded) return <></>;
-  return <Home />;
+  return (
+    <NavigationContainer>
+      <TabNavigator />
+    </NavigationContainer>
+  );
 }

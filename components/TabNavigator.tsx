@@ -1,10 +1,8 @@
-import { useEffect, useState } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
+import { useEffect, useState } from 'react';
+import Home from '../screens/Home';
 import { Session } from '@supabase/supabase-js';
 import { supabase } from '../lib/supabase';
-
-import Home from '../screens/Home';
 import Auth from '../screens/Auth';
 
 const { Navigator, Screen } = createBottomTabNavigator();
@@ -21,10 +19,10 @@ const TabNavigator = () => {
       setSession(session);
     });
   }, []);
-
   return (
     <Navigator>
-      <Screen name="Home" component={session && session.user ? Home : Auth} />
+      <Screen options={{ headerShown: false }} name="Auth" component={Auth} />
+      <Screen options={{ headerShown: false }} name="Home" component={Home} />
     </Navigator>
   );
 };
