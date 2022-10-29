@@ -1,4 +1,4 @@
-import { View, Image, Text } from 'react-native';
+import { View, Image, Text } from "react-native";
 
 interface ChatBarProps {
   imageUri: string;

@@ -1,10 +1,10 @@
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaView } from "react-native-safe-area-context";
 
-import { View, Text } from 'react-native';
+import { View, Text } from "react-native";
 
-import TopBar from '../components/TopBar';
-import StoriesBar from '../components/StoriesBar';
-import Chats from '../components/Chats';
+import TopBar from "../components/TopBar";
+import StoriesBar from "../components/StoriesBar";
+import Chats from "../components/Chats";
 
 const Home = () => {
   return (

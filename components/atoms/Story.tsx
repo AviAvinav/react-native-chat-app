@@ -1,4 +1,4 @@
-import { View } from 'react-native';
+import { View } from "react-native";
 
 const Story = () => {
   return <View></View>;

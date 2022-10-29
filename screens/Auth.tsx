@@ -1,14 +1,13 @@
-import { useState } from 'react';
-import { Alert, View, Text, TouchableOpacity, TextInput } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { useState } from "react";
+import { Alert, View, Text, TouchableOpacity, TextInput } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
-import { supabase } from '../lib/supabase';
+import { supabase } from "../lib/supabase";
 
 const Auth = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const [isLoggedIn, setIsLoggendIn] = useState(false);
 
   async function signInWithEmail() {
     setLoading(true);
@@ -19,7 +18,6 @@ const Auth = () => {
 
     if (error) Alert.alert(error.message);
     setLoading(false);
-    setIsLoggendIn(true);
   }
 
   async function signUpWithEmail() {
@@ -31,17 +29,16 @@ const Auth = () => {
 
     if (error) Alert.alert(error.message);
     setLoading(false);
-    setIsLoggendIn(true);
   }
   return (
     <SafeAreaView>
-      <View>
+      <View className="px-5">
         <View className="mt-5 py-1 self-stretch">
           <TextInput
             placeholder="Email"
             onChangeText={(text) => setEmail(text)}
             value={email}
-            autoCapitalize={'none'}
+            autoCapitalize={"none"}
           />
         </View>
         <View className="py-1 self-stretch">
@@ -50,7 +47,7 @@ const Auth = () => {
             value={password}
             secureTextEntry={true}
             placeholder="Password"
-            autoCapitalize={'none'}
+            autoCapitalize={"none"}
           />
         </View>
         <View className="mt-5 py-1 self-stretch">
@@ -66,10 +63,9 @@ const Auth = () => {
             disabled={loading}
             onPress={() => signUpWithEmail()}
           >
-            <Text>Sign Out</Text>
+            <Text>Sign Up</Text>
           </TouchableOpacity>
         </View>
-        <Text>{isLoggedIn ? 'Logged In' : 'Not logged in'}</Text>
       </View>
     </SafeAreaView>
   );

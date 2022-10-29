@@ -1,5 +1,5 @@
-import { View, ScrollView } from 'react-native';
-import ChatBar from './atoms/ChatBar';
+import { View, ScrollView } from "react-native";
+import ChatBar from "./atoms/ChatBar";
 
 const Chats = () => {
   return (

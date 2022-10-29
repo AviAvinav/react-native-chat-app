@@ -1,10 +1,10 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { useEffect, useState } from 'react';
-import Home from '../screens/Home';
-import { Session } from '@supabase/supabase-js';
-import { supabase } from '../lib/supabase';
-import Auth from '../screens/Auth';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { useEffect, useState } from "react";
+import Home from "../screens/Home";
+import { Session } from "@supabase/supabase-js";
+import { supabase } from "../lib/supabase";
+import Auth from "../screens/Auth";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
